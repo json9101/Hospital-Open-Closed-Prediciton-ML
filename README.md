@@ -137,17 +137,28 @@ OneHotEncoding으로 타입이 String인 컬럼의 결과를 수치화를 해줍
 <img width="365" alt="image" src="https://github.com/json9101/Project/assets/57518426/793583d1-3f01-46c2-822e-81e5369f0bd8">
 
 XGBoost
-하이퍼파라미터 튜닝 전 
+
+XGBoost 불러오기
+
+<img width="317" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/2604351d-7b3a-4a49-975b-97a8cfab5ef4">
+
+XGBoost 결과
 
 <img width="320" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/4a4682be-b8b7-4aa1-92d9-9c64e4eaa5c7">
 
-하이퍼파라미터 튜닝 후
+하이퍼파라미터 튜닝 설정후 실해 결과
+
+<img width="548" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/984cebbe-5a56-44dd-9c5d-8c31f5d4ee65">
+
 
 <img width="575" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/250e78ba-a9b1-487f-9c4f-19d3f44bcd94">
 
-GridSearch
+GridSearch 하이퍼파라미터 튜닝 설정후 실
 
-<img width="282" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/f064326c-bcd2-4a7c-9174-db29c0163087">
+<img width="478" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/a0cefe7d-82a0-4bab-8c18-b1ca361326e0">
+
+<img width="402" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/24ae8a52-5757-4aec-aebf-c13623494df5">
+
 
 
 각 컬럼의 중요도를 시각화 해보았습니다
