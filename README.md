@@ -155,8 +155,7 @@ XGBoost 결과입니다.
 
 <img width="548" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/984cebbe-5a56-44dd-9c5d-8c31f5d4ee65">
 
-
-<img width="575" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/250e78ba-a9b1-487f-9c4f-19d3f44bcd94">
+<img width="372" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/26c77db6-e7fe-4a06-844e-6314d83952cc">
 
 GridSearch 하이퍼파라미터 튜닝 설정후 실행 결과 입니다.
 
