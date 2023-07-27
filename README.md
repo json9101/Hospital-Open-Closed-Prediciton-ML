@@ -74,26 +74,33 @@ csv파일로 된 데이터로, 데이터는
 OC 영업 폐업을 타겟 컬럼으로 열려있을지 닫혀있을지 머신러닝으로 예측해보겠습니다.
 
 ### 결과
-랜덤 포레스트 
+
+랜덤 포레스트 정확도 결과 입니다.
 
 <img width="365" alt="image" src="https://github.com/json9101/Project/assets/57518426/793583d1-3f01-46c2-822e-81e5369f0bd8">
 
 XGBoost
-하이퍼파라미터 튜닝 전 
+하이퍼파라미터 튜닝 전 정확도 결과 입니다.
 
 <img width="320" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/4a4682be-b8b7-4aa1-92d9-9c64e4eaa5c7">
 
-하이퍼파라미터 튜닝 후
+하이퍼파라미터 튜닝 후 정확도 결과 입니다.
 
 <img width="392" alt="image" src="https://github.com/json9101/Project/assets/57518426/4da1f645-b6dd-4a93-8641-855aa974454b">
 
-gridsearch
+gridsearch 정확도 결과입니다.
 
 <img width="273" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/889662af-f0bf-4c6d-b20d-854b54749408">
 
 
 랜덤 포레스트, XGBoost와 GridSearch 머신러닝 실행결과 세 모델 모두 약 정확도가 약 95%가 나왔습니다.
 특히 XGBoost의 경우 하이퍼파라미터 튜닝도 해보았지만 차이점이 없었습니다.
+
+
+각 컬럼의 중요도를 시각화 해보았습니다.
+
+![image](https://github.com/json9101/Project/assets/57518426/0c53cf7f-c67f-487f-8be8-0e879628aab9)
+
 
 ### 보안할점
 
@@ -104,66 +111,59 @@ gridsearch
 # 결과의 과정이 궁금하시다면 밑에 전처리 과정과 머신러닝 과정을 봐주시면 감사하겠습니다.
 
 ### 전처리
-필요한 패캐지를 불러오고 csv파일로 되어있는 데이터를 불러옵니다
+필요한 패캐지를 불러오고 csv파일로 되어있는 데이터를 불러옵니다.
 
 <img width="557" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/eb80d296-26b5-47e4-a22c-34b5ebb4bcc1">
 
 
-중복된 데이터를 먼저 지워줍니다
+중복된 데이터를 먼저 지워줍니다.
 
 <img width="688" alt="image" src="https://github.com/json9101/Project/assets/57518426/6676b666-1736-4764-a15a-50b9803ae27f">
 
-전체가 결측된 행은 지워줍니다
+전체가 결측된 행은 지워줍니다.
 
 <img width="614" alt="image" src="https://github.com/json9101/Project/assets/57518426/1e35856b-7c32-4bb0-a572-af1d95d7295e">
 
-OneHotEncoding으로 타입이 String인 컬럼의 결과를 수치화를 해줍니다
+OneHotEncoding으로 타입이 String인 컬럼의 결과를 수치화를 해줍니다.
 
 <img width="571" alt="image" src="https://github.com/json9101/Project/assets/57518426/c9387db7-d8ff-4e3e-a909-65708dcb238f">
 
-중간중간에 있는 결측치를 채워줍니다
+중간중간에 있는 결측치를 채워줍니다.
 
 <img width="676" alt="image" src="https://github.com/json9101/Project/assets/57518426/832325d9-62d6-4e1a-b4f3-a294241c574a">
 
-예시로 위의 사진같이 두 employee컬럼에서 둘중 하나의 값만 없을 경우 값이 있는 다른 employee컬럼의 값을 사용합니다
+예시로 위의 사진같이 두 employee컬럼에서 둘중 하나의 값만 없을 경우 값이 있는 다른 employee컬럼의 값을 사용합니다.
 
 ### 머신러닝
-필요한 모델 패캐지를 불러오고 데이터를 정규화를 해줍니다
+필요한 모델 패캐지를 불러오고 데이터를 정규화를 해줍니다.
 
 <img width="338" alt="image" src="https://github.com/json9101/Project/assets/57518426/c33b3e3b-51e3-4513-8281-4a1b06828a64">
 
-랜덤 포레스트 
+랜덤 포레스트 실행결과 입니다.
 
 <img width="365" alt="image" src="https://github.com/json9101/Project/assets/57518426/793583d1-3f01-46c2-822e-81e5369f0bd8">
 
-XGBoost
-
-XGBoost 불러오기
+XGBoost 불러와줍니다.
 
 <img width="317" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/2604351d-7b3a-4a49-975b-97a8cfab5ef4">
 
-XGBoost 결과
+XGBoost 결과입니다.
 
 <img width="320" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/4a4682be-b8b7-4aa1-92d9-9c64e4eaa5c7">
 
-하이퍼파라미터 튜닝 설정후 실해 결과
+하이퍼파라미터 튜닝 설정후 실행 결과 입니다.
 
 <img width="548" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/984cebbe-5a56-44dd-9c5d-8c31f5d4ee65">
 
 
 <img width="575" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/250e78ba-a9b1-487f-9c4f-19d3f44bcd94">
 
-GridSearch 하이퍼파라미터 튜닝 설정후 실
+GridSearch 하이퍼파라미터 튜닝 설정후 실행 결과 입니다.
 
 <img width="478" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/a0cefe7d-82a0-4bab-8c18-b1ca361326e0">
 
 <img width="402" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/24ae8a52-5757-4aec-aebf-c13623494df5">
 
-
-
-각 컬럼의 중요도를 시각화 해보았습니다
-
-![image](https://github.com/json9101/Project/assets/57518426/0c53cf7f-c67f-487f-8be8-0e879628aab9)
 
 
 
