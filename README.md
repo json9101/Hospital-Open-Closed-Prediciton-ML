@@ -1,7 +1,8 @@
 ### 주제
-병원폐업률 머신러닝 예측모델 만들기
+은행에서 대출을 해줄때에 병원의 폐업 가능성 있습니다. 은행의 손해를 줄이기위해 병원의 폐업율을 예측하여 대출을 해줄지 말지를 결정하려고 합니다. 이 프로젝트에서 머신러닝을 사용하여 병원 폐업율을 높은 정확도로 예측해보는것이 목표입니다. 
 
 ### 준비
+csv파일로 된 데이터로, 데이터는 
 - inst_id - 각 파일에서의 병원 고유 번호
 - OC – 영업/폐업 분류, 2018년 폐업은 2017년 폐업으로 간주함
 - sido – 병원의 광역 지역 정보
@@ -68,13 +69,45 @@
 - employee1 – 고용한 총 직원의 수, 2017(회계년도)년 데이터를 의미함
 - employee2 – 고용한 총 직원의 수, 2016(회계년도)년 데이터를 의미함
 - ownerChange – 대표자의 변동
+의 컬럼들을 포함하고 있습니다.
 
-OC 영업 폐업을 타겟 컬럼으로 열려있을지 닫혀있을지 예측하기
+OC 영업 폐업을 타겟 컬럼으로 열려있을지 닫혀있을지 머신러닝으로 예측해보겠습니다.
+
+### 결과
+랜덤 포레스트 
+
+<img width="365" alt="image" src="https://github.com/json9101/Project/assets/57518426/793583d1-3f01-46c2-822e-81e5369f0bd8">
+
+XGBoost
+하이퍼파라미터 튜닝 전 
+
+<img width="320" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/4a4682be-b8b7-4aa1-92d9-9c64e4eaa5c7">
+
+하이퍼파라미터 튜닝 후
+
+<img width="392" alt="image" src="https://github.com/json9101/Project/assets/57518426/4da1f645-b6dd-4a93-8641-855aa974454b">
+
+gridsearch
+
+<img width="273" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/889662af-f0bf-4c6d-b20d-854b54749408">
+
+
+랜덤 포레스트, XGBoost와 GridSearch 머신러닝 실행결과 세 모델 모두 약 정확도가 약 95%가 나왔습니다.
+특히 XGBoost의 경우 하이퍼파라미터 튜닝도 해보았지만 차이점이 없었습니다.
+
+### 보안할점
+
+- 데이터 자체에 Open이 Closed 보다 훨씬 많아서 평균적으로 정확도가 높은것으로 생각됩니다.
+- 정확도를 높이기 위해서는 여러가지 컬럼들 잘 선택해서 테스트를 해봐야합니다.
+- 하지만 위의 각 컬럼의 중요도와 같이 모든 컬럼의 상관이 크다고 보는 0.4를 넘는 컬럼이 없기 때문에 컬럼 선택에 어려움이 있습니다.
+
+# 어떡해 이런 결과가 나왔는지가 궁금하시다면 밑에 전처리 과정과 머신러닝 과정을 봐주시면 감사하겠습니다.
 
 ### 전처리
 필요한 패캐지를 불러오고 csv파일로 되어있는 데이터를 불러옵니다
 
-<img width="469" alt="image" src="https://github.com/json9101/Project/assets/57518426/7b6ccfb1-8b1f-4e97-9ca0-f1bed2dc7119">
+<img width="557" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/eb80d296-26b5-47e4-a22c-34b5ebb4bcc1">
+
 
 중복된 데이터를 먼저 지워줍니다
 
@@ -103,21 +136,29 @@ OneHotEncoding으로 타입이 String인 컬럼의 결과를 수치화를 해줍
 
 <img width="365" alt="image" src="https://github.com/json9101/Project/assets/57518426/793583d1-3f01-46c2-822e-81e5369f0bd8">
 
-XGBoost 
+XGBoost
+하이퍼파라미터 튜닝 전 
 
-<img width="392" alt="image" src="https://github.com/json9101/Project/assets/57518426/4da1f645-b6dd-4a93-8641-855aa974454b">
+<img width="320" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/4a4682be-b8b7-4aa1-92d9-9c64e4eaa5c7">
 
-정확도가 약 95%정도까지만 나왔습니다
+하이퍼파라미터 튜닝 후
+
+<img width="575" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/250e78ba-a9b1-487f-9c4f-19d3f44bcd94">
+
+GridSearch
+
+<img width="282" alt="image" src="https://github.com/json9101/Hospital-Open-Closed-Prediciton-ML-Project/assets/57518426/f064326c-bcd2-4a7c-9174-db29c0163087">
+
 
 각 컬럼의 중요도를 시각화 해보았습니다
 
 ![image](https://github.com/json9101/Project/assets/57518426/0c53cf7f-c67f-487f-8be8-0e879628aab9)
 
-### 보안할점
 
-- 데이터 자체에 Open이 Closed 보다 훨씬 많아서 평균적으로 정확도가 높은것으로 생각됩니다.
-- 위의 각 컬럼의 중요도와 같이 모든 컬럼의 상관이 크다고 보는 0.4를 넘는 컬럼이 없습니다.
-정확도를 높이기 위해서는 여러가지 컬럼들 잘 선택해서 테스트를 해봐야합니다.
+
+
+
+
 
 
 
